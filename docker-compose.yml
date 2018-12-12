@@ -40,3 +40,6 @@ services:
     environment:
     - CONCOURSE_TSA_HOST=concourse-web:2222
     - CONCOURSE_GARDEN_NETWORK
+    deploy:
+      mode: replicated
+      replicas: 3
