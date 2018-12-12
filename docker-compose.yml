@@ -33,6 +33,7 @@ services:
   concourse-worker:
     image: concourse/concourse
     command: worker
+    restart: always
     privileged: true
     links: [concourse-web]
     depends_on: [concourse-web]
@@ -44,6 +45,7 @@ services:
   concourse-worker01:
     image: concourse/concourse
     command: worker
+    restart: always
     privileged: true
     links: [concourse-web]
     depends_on: [concourse-web]
@@ -55,6 +57,7 @@ services:
   concourse-worker02:
     image: concourse/concourse
     command: worker
+    restart: always
     privileged: true
     links: [concourse-web]
     depends_on: [concourse-web]
