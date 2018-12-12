@@ -1,5 +1,8 @@
 version: '3'
 
+volumes:
+  - dbdata:/var/lib/postgresql/data
+
 services:
   concourse-db:
     image: postgres
@@ -8,6 +11,8 @@ services:
     - POSTGRES_PASSWORD=concourse_pass
     - POSTGRES_USER=concourse_user
     - PGDATA=/database
+    volumes:
+      - dbdata:/database
 
   concourse-web:
     image: concourse/concourse
